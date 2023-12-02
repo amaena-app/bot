@@ -1,0 +1,15 @@
+/home/michi/Documenti/progetti/bot/bin/Debug/net7.0/bot
+/home/michi/Documenti/progetti/bot/bin/Debug/net7.0/bot.deps.json
+/home/michi/Documenti/progetti/bot/bin/Debug/net7.0/bot.runtimeconfig.json
+/home/michi/Documenti/progetti/bot/bin/Debug/net7.0/bot.dll
+/home/michi/Documenti/progetti/bot/bin/Debug/net7.0/bot.pdb
+/home/michi/Documenti/progetti/bot/obj/Debug/net7.0/bot.csproj.AssemblyReference.cache
+/home/michi/Documenti/progetti/bot/obj/Debug/net7.0/bot.GeneratedMSBuildEditorConfig.editorconfig
+/home/michi/Documenti/progetti/bot/obj/Debug/net7.0/bot.AssemblyInfoInputs.cache
+/home/michi/Documenti/progetti/bot/obj/Debug/net7.0/bot.AssemblyInfo.cs
+/home/michi/Documenti/progetti/bot/obj/Debug/net7.0/bot.csproj.CoreCompileInputs.cache
+/home/michi/Documenti/progetti/bot/obj/Debug/net7.0/bot.dll
+/home/michi/Documenti/progetti/bot/obj/Debug/net7.0/refint/bot.dll
+/home/michi/Documenti/progetti/bot/obj/Debug/net7.0/bot.pdb
+/home/michi/Documenti/progetti/bot/obj/Debug/net7.0/bot.genruntimeconfig.cache
+/home/michi/Documenti/progetti/bot/obj/Debug/net7.0/ref/bot.dll

@@ -1,0 +1,31 @@
+{
+    "browse_surface": "category_browse",
+    "event_search": {
+        "page_size": 50,
+        "page": 2,
+        "dates": [
+            "current_future"
+        ],
+        "places": [
+            "101752607"
+        ],
+        "tags": [
+            "EventbriteCategory/105",
+            "EventbriteCategory/108",
+            "EventbriteCategory/109",
+            "EventbriteCategory/111"
+        ]
+    },
+    "expand.destination_event": [
+        "primary_venue",
+        "image",
+        "ticket_availability",
+        "saves",
+        "event_sales_status",
+        "primary_organizer",
+        "public_collections"
+    ],
+    "expand.destination_profile": [
+        "image"
+    ]
+}

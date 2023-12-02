@@ -1,0 +1,39 @@
+{
+    "browse_surface": "category_browse",
+    "event_search": {
+        "page_size": 100,
+        "exclude": {
+            "ids": []
+        },
+        "aggs": {
+            "tags": {
+                "size": 50
+            },
+            "organizertagsautocomplete_agg": {
+                "size": 50
+            },
+            "dates": {}
+        },
+        "dates": [
+            "current_future"
+        ],
+        "tags": [
+            "EventbriteCategory/108"
+        ],
+        "places": [
+            "101752607"
+        ]
+    },
+    "expand.destination_event": [
+        "primary_venue",
+        "image",
+        "ticket_availability",
+        "saves",
+        "event_sales_status",
+        "primary_organizer",
+        "public_collections"
+    ],
+    "expand.destination_profile": [
+        "image"
+    ]
+}

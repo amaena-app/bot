@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "maDOkOBmMpTnj5XFmoT8EeOyA7E+WXFodF0RF0Vi5VnNKOPiZoUZNIl1UPsmzpZECjPIkpHbPAwKzQ2ezhbZ9A==",
+  "success": true,
+  "projectFilePath": "/home/michi/Documenti/progetti/bot/bot.csproj",
+  "expectedPackageFiles": [
+    "/home/michi/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.13/microsoft.aspnetcore.app.ref.7.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

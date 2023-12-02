@@ -1,0 +1,602 @@
+[
+    {
+        "name": "Coffee Talk & Cupping: Brew for Clean Water in Colombia!",
+        "summary": "Exploring the Impact of Our Coffee Initiatives in Colombia",
+        "date": "08/12/2023",
+        "address": {
+            "name": "Faro - Caffè Specialty",
+            "address": "55 Via Piave",
+            "latitude": 41.9101357,
+            "longitude": 12.4984435
+        },
+        "type": "Charity & Causes"
+    },
+    {
+        "name": "Artika - Immersive Dinner Experience",
+        "summary": "Preparati ad un viaggio multisensoriale nell'arte digitale, nella gastronomia, in suoni e profumi avvolgenti.",
+        "date": "20/12/2023",
+        "address": {
+            "name": "Salone delle Colonne",
+            "address": "Piazza Guglielmo Marconi 26C",
+            "latitude": 41.8345039,
+            "longitude": 12.4700458
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Stand Up Comedy Antiquario San Lorenzo 9 dicembre 21:30 Ingresso libero",
+        "summary": "Ridi bevi e ridi, il 9 dicembre dalle 21:30 all'Antiquario San Lorenzo con la Stand Up comedy migliore di Roma",
+        "date": "09/12/2023",
+        "address": {
+            "name": "Antiquario San Lorenzo",
+            "address": "2 Via dei Volsci",
+            "latitude": 41.8961503,
+            "longitude": 12.5118866
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "DAVIDE SPADOLÀ ~ STAND UP COMEDY SHOW ~ AL MURETTO",
+        "summary": "DAVIDE SPADOLÀ ~ STAND UP COMEDY SHOW ~ AL MURETTO",
+        "date": "15/12/2023",
+        "address": {
+            "name": "al muretto",
+            "address": "Via degli Aurunci 26",
+            "latitude": 41.8961315,
+            "longitude": 12.5146131
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Workshop - Creazione di Burattini per bambini",
+        "summary": "Lezione di Creazione di Burattini per bambini con materiale di riciclo.",
+        "date": "08/12/2023",
+        "address": {
+            "name": "Parco della Cellulosa",
+            "address": "Via della Cellulosa, 132, Roma",
+            "latitude": 41.9190101,
+            "longitude": 12.3591409
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "SCHOLE - La rivoluzione della Scuola di Barbiana",
+        "summary": "Monologo teatrale scritto, diretto e interpretato da Tommaso De Santis",
+        "date": "19/01/2024",
+        "address": {
+            "name": "Teatro Furio Camillo",
+            "address": "44 Via Camilla",
+            "latitude": 41.8753577,
+            "longitude": 12.525556
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Roma by Night",
+        "summary": "performing tour",
+        "date": "09/12/2023",
+        "address": {
+            "name": "Via dell'Arco di Parma, 18",
+            "address": "18 Via dell'Arco di Parma",
+            "latitude": 41.9012031,
+            "longitude": 12.470718
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "Roma by Night",
+        "summary": "performing tour",
+        "date": "10/12/2023",
+        "address": {
+            "name": "Via dell'Arco di Parma, 18",
+            "address": "18 Via dell'Arco di Parma",
+            "latitude": 41.9012031,
+            "longitude": 12.470718
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "Roma by Night",
+        "summary": "performing tour",
+        "date": "10/12/2023",
+        "address": {
+            "name": "Via dell'Arco di Parma, 18",
+            "address": "18 Via dell'Arco di Parma",
+            "latitude": 41.9012031,
+            "longitude": 12.470718
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "FIABE DAL MONDO: Fiabe Africane",
+        "summary": "CAST ARTISTICO/OSPITI/CURATORI: Balkissa MaigaPUBBLICO DI RIFERIMENTO (bambini, adulti, tutti) BAMBINI.",
+        "date": "08/12/2023",
+        "address": {
+            "name": "Parco della Cellulosa",
+            "address": "Via della Cellulosa, 132",
+            "latitude": 41.9190101,
+            "longitude": 12.3591409
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Cuore in Musica",
+        "summary": "Cuore in Musica è un'esperienza emozionante che celebra la passione per la musica,  riempiendo il tuo cuore di note e ritmi indimenticabili.",
+        "date": "02/12/2023",
+        "address": {
+            "name": "Pontificia Facoltà di Scienze dell'Educazione Auxilium, Via Cremolino, 141, Roma, RM, Italia",
+            "address": "141 Via Cremolino",
+            "latitude": 41.9329338,
+            "longitude": 12.3717164
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Fuori Posto",
+        "summary": "workshop",
+        "date": "10/12/2023",
+        "address": {
+            "name": "Via dell'Arco di Parma, 18",
+            "address": "18 Via dell'Arco di Parma",
+            "latitude": 41.9012031,
+            "longitude": 12.470718
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "GLADIATOR SHOW",
+        "summary": "GLADIATOR SHOW OF ANCIENT ROME",
+        "date": "10/12/2023",
+        "address": {
+            "name": "Gladiator School Rome - 'Gruppo Storico Romano '",
+            "address": "18 Via Appia Antica",
+            "latitude": 41.8697391,
+            "longitude": 12.499042000000031
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Ghosts of Rome: Haunting Stories Outdoor Escape Game",
+        "summary": "Looking to get spooked or spook someone else? Then put on your vampire teeth and get booking: this is your opportunity to do exactly that!",
+        "date": "02/12/2023",
+        "address": {
+            "name": "Piazza del Popolo, 539",
+            "address": "539 Piazza del Popolo",
+            "latitude": 41.9101277,
+            "longitude": 12.4760558
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "Vatican Museums & The Sistine Chapel: Outdoor Escape Game",
+        "summary": "Follow clues, solve puzzles, discover new places and learn incredible stories of the city's past and present during this city adventure.",
+        "date": "02/12/2023",
+        "address": {
+            "name": "Pigna Courtyard",
+            "address": "Pigna Courtyard",
+            "latitude": 41.9057412,
+            "longitude": 12.4545986
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "Rome Outdoor Escape Game: The Emperor's Dream",
+        "summary": "Follow clues, solve puzzles, discover new places and learn incredible stories of the city's past and present during this city adventure.",
+        "date": "02/12/2023",
+        "address": {
+            "name": "St. Angelo Bridge",
+            "address": "Ponte Sant'Angelo",
+            "latitude": 41.901901,
+            "longitude": 12.4664498
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "Rome Outdoor Escape Game: The Sad Souls of Villa Borghese",
+        "summary": "Follow clues, solve puzzles, discover new places and learn incredible stories of the city's past and present during this city adventure.",
+        "date": "02/12/2023",
+        "address": {
+            "name": "Edicola della Musa",
+            "address": "Quartiere III Pinciano",
+            "latitude": 41.9246645,
+            "longitude": 12.4867883
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "Anna - Racconto di una storia vera",
+        "summary": "Debutta in anteprima nazionale “Anna. Racconto di una storia vera” scritto e diretto da Alessandro Gravano. Una commedia inedita in due atti",
+        "date": "09/12/2023",
+        "address": {
+            "name": "Teatro Petrolini",
+            "address": "5 Via Rubattino",
+            "latitude": 41.8802813,
+            "longitude": 12.4739236
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Gladiators of Rome: Outdoor Escape Game",
+        "summary": "Follow clues, solve puzzles, discover new places and learn incredible stories of the city's past and present during this city adventure.",
+        "date": "02/12/2023",
+        "address": {
+            "name": "Rome",
+            "address": "1",
+            "latitude": 41.889187,
+            "longitude": 12.4982572
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "Rome Outdoor Escape Game: Angels and Demons Illuminati Hunt",
+        "summary": "Follow in the steps of character Robert Langdon in \"Angels and Demons\"! Walk around Rome, solving clues to unlock the next destination.",
+        "date": "02/12/2023",
+        "address": {
+            "name": "Santa Maria degli Angeli",
+            "address": "10 Via Giuseppe Romita",
+            "latitude": 41.9032796,
+            "longitude": 12.4964492
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "Ancient Rome Outdoor Escape Game: The prostitute empress in Suburra",
+        "summary": "Follow clues, solve puzzles, discover new places and learn incredible stories of the city's past and present during this city adventure.",
+        "date": "02/12/2023",
+        "address": {
+            "name": "Piazza della Suburra",
+            "address": "Piazza della Suburra",
+            "latitude": 41.8949378,
+            "longitude": 12.4929689
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "Rome Famous Movie Locations: Outdoor Escape Game",
+        "summary": "Follow clues, solve puzzles, discover new places and learn incredible stories of the city's past and present during this city adventure.",
+        "date": "02/12/2023",
+        "address": {
+            "name": "Fountain of the Naiads",
+            "address": "Piazza della Repubblica",
+            "latitude": 41.9027137,
+            "longitude": 12.4962479
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "Rome Outdoor Escape Game: Return Home",
+        "summary": "Follow clues, solve puzzles, discover new places and learn incredible stories of the city's past and present during this city adventure.",
+        "date": "02/12/2023",
+        "address": {
+            "name": "Ponte Fabricio",
+            "address": "Ponte Fabricio",
+            "latitude": 41.8911306,
+            "longitude": 12.4783002
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "Spettacolo teatrale per bambini \"Favola di Natale\"",
+        "summary": "Domenica 17 dicembre ore 17 andrà in scena lo spettacolo teatrale per bambini “Favola di Natale” presso il Teatro Studio Sei",
+        "date": "17/12/2023",
+        "address": {
+            "name": "Teatro Studio Sei",
+            "address": "22 b/d Via Grammichele",
+            "latitude": 41.8631724,
+            "longitude": 12.6718775
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Spettacolo teatrale per bambini \"Questa renna a chi la dò?\"",
+        "summary": "Domenica 17 Dicembre ore 11.15, presso il Teatro Tirso, via Tirso, 89 (zona Viale Regina Margherita)",
+        "date": "17/12/2023",
+        "address": {
+            "name": "Teatro Tirso De Molina",
+            "address": "89 Via Tirso",
+            "latitude": 41.9171213,
+            "longitude": 12.5005802
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Presentazione di \"Stella Benson\"",
+        "summary": "Francesca Cosentino presenta \"Stella Benson. La cacciatrice di parole\".",
+        "date": "11/12/2023",
+        "address": {
+            "name": "Biblioteca Valle Aurelia",
+            "address": "129 Viale di Valle Aurelia",
+            "latitude": 41.9051388,
+            "longitude": 12.4371248
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "FLAMENCO DE NAVIDAD - Spettacolo di Flamenco con musica dal vivo",
+        "summary": "Spettacolo di Flamenco con musica dal vivo.  Be Flamenco in collaborazione Priscilla scuola di danza.",
+        "date": "21/12/2023",
+        "address": {
+            "name": "Primo Piano",
+            "address": "33 Via Tiburno",
+            "latitude": 41.9112667,
+            "longitude": 12.5462388
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "WeMeet | Corso Fotografia di Viaggio",
+        "summary": "Come trasformare delle semplici foto in un vero e proprio racconto del tuo viaggio.",
+        "date": "12/12/2023",
+        "address": {
+            "name": "Chloe Club",
+            "address": "129 Via Appia Nuova",
+            "latitude": 41.8825818,
+            "longitude": 12.5135507
+        },
+        "type": "Travel & Outdoor"
+    },
+    {
+        "name": "WeMeet | Surf School Party",
+        "summary": "Venerdì 15 Dicembre la Squid Surf School invita tutti i surfers della community di WeRoad alla loro festa di fine anno :)",
+        "date": "15/12/2023",
+        "address": {
+            "name": "Kursaal",
+            "address": "36/40 Lungomare Lutazio Catulo",
+            "latitude": 41.7151336,
+            "longitude": 12.3158082
+        },
+        "type": "Sports & Fitness"
+    },
+    {
+        "name": "WeMeet | Go-Kart Indoor",
+        "summary": "Serata in un Kartodromo Indoor che prevede aperitivo, qualificazioni contro il tempo e gare in gruppo",
+        "date": "19/12/2023",
+        "address": {
+            "name": "Kartodromo Pomezia - Roma",
+            "address": "Via Pontina",
+            "latitude": 41.6886109,
+            "longitude": 12.488644
+        },
+        "type": "Sports & Fitness"
+    },
+    {
+        "name": "Alla vita stessa",
+        "summary": "Mostra personale di pittura dell'artista  Giuseppe Cecchini",
+        "date": "02/12/2023",
+        "address": {
+            "name": "Roma",
+            "address": "via angelo poliziano 78/b",
+            "latitude": 41.8909063,
+            "longitude": 12.499798899999973
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Martina Cambone, Onde di cristallo. La libertà di essere fragili",
+        "summary": "Presentazione del libro di Martina Cambone presso la Sala Nettuno a partire dalle 15:30",
+        "date": "07/12/2023",
+        "address": {
+            "name": "Centro Congressi Roma La Nuvola",
+            "address": "40 /44 Viale Asia",
+            "latitude": 41.83089760000001,
+            "longitude": 12.4720787
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "SKATE NIGHT + SKATE CLASS  ROMA",
+        "summary": "LEZIONI, FREE SKATE, MUSICA E BIRRETTE CON LA COMMUNITY SURFINTOWN",
+        "date": "07/12/2023",
+        "address": {
+            "name": "Via Giuseppe Mirri, 35 00159 – Roma",
+            "address": "Via Giuseppe Mirri",
+            "latitude": 41.9028792,
+            "longitude": 12.540074
+        },
+        "type": "Sports & Fitness"
+    },
+    {
+        "name": "Comedy Fellas @Archivio Garzia | Standup comedy GRATIS",
+        "summary": "Tornano i Comedy Fellas all'Archivio Garzia, il 11 dicembre 2023 alle 21:30! FREE ENTRY con tessera ARCI!",
+        "date": "11/12/2023",
+        "address": {
+            "name": "archivio garzia",
+            "address": "Via dei Conciatori 1D",
+            "latitude": 41.8743322,
+            "longitude": 12.4799964
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Roma Comedy Society",
+        "summary": "L'enfer club ha il piacere di presentarvi la nuova serata di stand up della capitale.",
+        "date": "05/12/2023",
+        "address": {
+            "name": "Enfer Club",
+            "address": "536 Via Nomentana",
+            "latitude": 41.9360361,
+            "longitude": 12.5384042
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Stand Up Comedy Night da Zalib",
+        "summary": "Comici emergenti nel salottino più cool di Trastevere. Si beve e si ride. Che poi cool, mica stiamo a Milano...",
+        "date": "07/12/2023",
+        "address": {
+            "name": "Zalib - Circolo Arci",
+            "address": "35 Via della Penitenza",
+            "latitude": 41.8941404,
+            "longitude": 12.465219
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "YOGA ON-LINE: Lezioni GRATUITE di prova",
+        "summary": "Corsi di Hatha Yoga di Rosalba Venditti",
+        "date": "04/12/2023",
+        "address": {
+            "name": "Roma",
+            "address": "Via Enea 91",
+            "latitude": 41.8746726,
+            "longitude": 12.528012900000022
+        },
+        "type": "Sports & Fitness"
+    },
+    {
+        "name": "SONG UP COMEDY SHOW! -  LA STAND UP \"SUONATA\"!",
+        "summary": "La prima stand up comedy  accompagnata da strimpellate musicali dei nostri comici!",
+        "date": "07/12/2023",
+        "address": {
+            "name": "Glu Glu Roma non solo enoteca (Vini naturali e non)",
+            "address": "42 Via dei Frassini",
+            "latitude": 41.8803639,
+            "longitude": 12.5681757
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Allenamento con Freeletics",
+        "summary": "Unisciti a noi per un'esperienza di allenamento Freeletics .Partecipa al nostro evento di gruppo all'insegna del fitness funzionale e HIIT",
+        "date": "03/12/2023",
+        "address": {
+            "name": "Parco del Lago dell'EUR",
+            "address": "Passeggiata del Giappone altezza Biglietteria di Wonderland",
+            "latitude": 41.8291079,
+            "longitude": 12.4662629
+        },
+        "type": "Sports & Fitness"
+    },
+    {
+        "name": "Fiaccolata per la Giornata Mondiale dei Diritti Umani",
+        "summary": "Domenica 10 Dicembre 2023 ore 19.00 - Piazza Santi Apostoli,Roma",
+        "date": "10/12/2023",
+        "address": {
+            "name": "Piazza dei Santi Apostoli",
+            "address": "Piazza dei Santi Apostoli",
+            "latitude": 41.8976617,
+            "longitude": 12.4830765
+        },
+        "type": "Charity & Causes"
+    },
+    {
+        "name": "Vuoi Far Parte Di Una Giuria Popolare Teatrale?",
+        "summary": "7 spettacoli in concorsocon temi e tecniche su cui confrontarsi per scegliere il vincitore 2023 del Premio  Dante Cappelletti. Iscriviti!",
+        "date": "09/12/2023",
+        "address": {
+            "name": "Teatro India",
+            "address": "1 Lungotevere Vittorio Gassman",
+            "latitude": 41.8688929,
+            "longitude": 12.4717594
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "2003-2023 | Ventennale ASS.ITER ETS",
+        "summary": "Racconti, immagini e video di venti anni di progetti in Eritrea",
+        "date": "16/12/2023",
+        "address": {
+            "name": "Teatro 7 Off",
+            "address": "81 Via Monte Senario",
+            "latitude": 41.9444942,
+            "longitude": 12.53279
+        },
+        "type": "Charity & Causes"
+    },
+    {
+        "name": "YOGA nel PARCO della CAFFARELLA - ogni sabato ore  10-11",
+        "summary": "LEZIONI DI YOGA adatte a tutti, anche principianti. In basso 3 lezioni di prova.",
+        "date": "09/12/2023",
+        "address": {
+            "name": "Parco della Caffarella. Ingresso largo Pietro Tacchi Venturi",
+            "address": "Largo Pietro Tacchi Venturi",
+            "latitude": 41.8672199,
+            "longitude": 12.5256394
+        },
+        "type": "Sports & Fitness"
+    },
+    {
+        "name": "stARS(T), Mostra di Arte Contemporanea",
+        "summary": "stARS(T) Una Mostra, una riflessione artistica e filosofica alla scoperta del profondo significato dell’Arte.",
+        "date": "09/12/2023",
+        "address": {
+            "name": "Via Merulana, 220",
+            "address": "220 Via Merulana",
+            "latitude": 41.892375,
+            "longitude": 12.5015474
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "UN GIORNO TUTTO QUESTO NIENTE SARÁ TUO - LABORATORI A TORREVECCHIA",
+        "summary": "Dal 17 Novembre al 17 Dicembre - Laboratori GRATUITI : TEATRO, POESIA, MUSICA E VIDEO INTERVISTE",
+        "date": "02/12/2023",
+        "address": {
+            "name": "via Cristoforo Numai, 51",
+            "address": "51 Via Cristoforo Numai",
+            "latitude": 41.9174601,
+            "longitude": 12.4064592
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "La Rosa e il Rasoio: NO MGF",
+        "summary": "Attolini Binga Celani Contestabile Di Coste Dushi Ekman Fabrizi Krizek Molinari Pitrelli Ripandelli Santoro Schaefer Stucky Sutera Trevisi",
+        "date": "06/12/2023",
+        "address": {
+            "name": "Casa del municipio",
+            "address": "53 Via Galilei",
+            "latitude": 41.89100859999999,
+            "longitude": 12.5057805
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Presentazione Libro “La conquista dell’imperfezione”",
+        "summary": "C. Giancane presenta La conquista dell'imperfezione. Intervengono Fabrizio Buscicchio, autore Tv e Federico Della Rocca, psicoterapeuta.",
+        "date": "12/12/2023",
+        "address": {
+            "name": "ELI Libreria indipendente, Viale Somalia, Roma, RM, Italia",
+            "address": "50 A Viale Somalia",
+            "latitude": 41.93502419999999,
+            "longitude": 12.5118684
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Premi Tuttoteatro.com 2023",
+        "summary": "3 giorni con 7 spettacoli inediti e 2 debutto romani ad accesso gratuito dall'8 al 10 dicembre. Evento sovratitolato e/o tradotto in lis",
+        "date": "09/12/2023",
+        "address": {
+            "name": "Teatro India",
+            "address": "1 Lungotevere Vittorio Gassman",
+            "latitude": 41.8688929,
+            "longitude": 12.4717594
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Prefiguring world(s) through artistic practice",
+        "summary": "Exploring relations between artistic practice and prefiguration",
+        "date": "15/12/2023",
+        "address": {
+            "name": "Casa delle donne Lucha y Siesta, Via Lucio Sestio, Rome, Metropolitan City of Rome Capital, Italy",
+            "address": "10 Via Lucio Sestio",
+            "latitude": 41.85955310000001,
+            "longitude": 12.556603
+        },
+        "type": "Performing & Visual Arts"
+    },
+    {
+        "name": "Stand Up Comedy Show by Brigata Comica",
+        "summary": "Un Comedy Show ogni volta diverso al Adavedè ComedyLAB con birre artigianali e panini di prima qualità!",
+        "date": "06/12/2023",
+        "address": {
+            "name": "Piazza delle Giunchiglie, 6, Rome, Metropolitan City of Rome Capital, Italy",
+            "address": "6 Piazza delle Giunchiglie",
+            "latitude": 41.8799824,
+            "longitude": 12.5645827
+        },
+        "type": "Performing & Visual Arts"
+    }
+]
