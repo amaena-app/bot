@@ -2,7 +2,7 @@
     "browse_surface": "category_browse",
     "event_search": {
         "page_size": 50,
-        "page": 2,
+        "page": 1,
         "dates": [
             "current_future"
         ],

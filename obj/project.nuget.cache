@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xEv2Acj5xVVyX9HEo3d7+OeNc/HWQhb4dChTw4JaZ9cnD8uAsQNo2BMC9m1tk45ZZLm/4up2tjBR1+kg5ZPW7Q==",
+  "dgSpecHash": "maDOkOBmMpTnj5XFmoT8EeOyA7E+WXFodF0RF0Vi5VnNKOPiZoUZNIl1UPsmzpZECjPIkpHbPAwKzQ2ezhbZ9A==",
   "success": true,
-  "projectFilePath": "/home/runner/work/bot/bot/bot.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/michi/Documenti/progetti/bot/bot.csproj",
+  "expectedPackageFiles": [
+    "/home/michi/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.13/microsoft.aspnetcore.app.ref.7.0.13.nupkg.sha512"
+  ],
   "logs": []
 }
