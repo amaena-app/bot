@@ -4,13 +4,8 @@ using System.Text.Json;
 
 class Bot
 {
-    private static HttpClient client = new()
-    {
-        BaseAddress = new Uri("https://www.eventbrite.it"),
 
-    };
-
-    async static Task<string> Richiedi(String request)
+    async static Task<string> Richiedi(String request, HttpClient client)
     {
 
         HttpResponseMessage mess = await client.PostAsync(content: new StringContent(request, Encoding.UTF8, MediaTypeHeaderValue.Parse("application/json")), requestUri: new Uri("https://www.eventbrite.it/api/v3/destination/search/"));
@@ -29,6 +24,8 @@ class Bot
         }
 
         EventResponseList erl = new EventResponseList();
+
+        HttpClient client = new();
         
         client.DefaultRequestHeaders.Add("Referer", "https://www.eventbrite.it/b/italy--roma/sports-and-fitness/");
         client.DefaultRequestHeaders.Add("Connection", "keep-alive");
@@ -41,13 +38,15 @@ class Bot
             request.event_search.page = page++;
             string request_string = JsonSerializer.Serialize<EventBriteRequest>(request);
             //Console.WriteLine(request);
-            var t = Task.Run(() => Richiedi(request_string));
+            var t = Task.Run(() => Richiedi(request_string, client));
             t.Wait();
             /*,
                 Da aggiungere alla richiesta:
                 "EventbriteFormat/16",
                 "EventbriteFormat/1"
             */
+
+            //TODO: add results from string search like "aperitivo"
 
             Console.WriteLine(t.Result.ToString());
             erl += JsonSerializer.Deserialize<EventResponseList>(t.Result.ToString());
