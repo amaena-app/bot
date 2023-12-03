@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/michi/.nuget/packages/": {}
+    "/home/runner/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/michi/Documenti/progetti/bot/bot.csproj",
+      "projectUniqueName": "/home/runner/work/bot/bot/bot.csproj",
       "projectName": "bot",
-      "projectPath": "/home/michi/Documenti/progetti/bot/bot.csproj",
-      "packagesPath": "/home/michi/.nuget/packages/",
-      "outputPath": "/home/michi/Documenti/progetti/bot/obj/",
+      "projectPath": "/home/runner/work/bot/bot/bot.csproj",
+      "packagesPath": "/home/runner/.nuget/packages/",
+      "outputPath": "/home/runner/work/bot/bot/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/michi/.nuget/NuGet/NuGet.Config"
+        "/home/runner/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -54,18 +54,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.13, 7.0.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.113/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
       }
     }
   }
