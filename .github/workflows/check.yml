@@ -7,6 +7,11 @@ on:
   schedule:
     - cron: "0 0,12 * * *"
   workflow_dispatch:
+  workflow_run:
+    workflows: 
+      [".NET"] 
+    types:
+      - completed
 
 jobs:
   build:
