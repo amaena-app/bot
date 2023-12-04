@@ -25,12 +25,12 @@ Here the list of the supported website, the one with actually implemented suppor
 - [ ] https://www.oggiroma.it/eventi/mostre/
 - [ ] https://www.artribune.com/mostre/roma/
 - [ ] https://www.romaguida.com/?gclid=CjwKCAiAmZGrBhAnEiwAo9qHiT_Okdp6N-17GpnMNlCiWudvKyAs3zeJ6Vr85GiIKoiqCiZ1zFegPhoCYtsQAvD_BwE
-- [ ] https://www.eventbrite.it/d/italy--roma/arts--events/?page=2
+- [x] https://www.eventbrite.it/d/italy--roma/arts--events/?page=2
 
 ### Escursioni a Roma selezionati 
 
 - [ ] https://www.civitatis.com/it/roma?aid=100&cmp=it_IT_Nonbrand&cmpint=_DestinosPrincipales_Italia_DSA&gclsrc=aw.ds&gad_source=1&gclid=CjwKCAiAmZGrBhAnEiwAo9qHiUJu203pqEIQ_Bhv7OI0kAcdzXw09RKB5wKH-_Hw2RG_jU-SWcIByhoCFucQAvD_BwE
-- [x] https://www.eventbrite.it/d/italy--roma/tours/
+- [ ] https://www.eventbrite.it/d/italy--roma/tours/
 - [x] https://www.eventbrite.it/b/italy--roma/travel-and-outdoor/
 - [ ] https://www.visite-guidate-roma.com/calendario-visite-guidate-associazione-culturale-roma-bella/
 
@@ -40,7 +40,8 @@ Here the list of the supported website, the one with actually implemented suppor
 - [ ] https://www.eventbrite.it/d/italy--roma/presentazione-libro/
 - [ ] https://www.pigneto.it/eventi/libri/
 
-Eventi di beneficenza Roma selezionati 
+###Eventi di beneficenza Roma selezionati 
+
 - [x] https://www.eventbrite.it/b/italy--roma/charity-and-causes/
 - [ ] https://www.fondazionecristore.org/eventi/
 
@@ -103,7 +104,7 @@ Eventi di beneficenza Roma selezionati
 
 ### Eventi enogastronomici / degustazioni
 
-- [ ] https://www.eventbrite.it/b/italy--roma/food-and-drink/
+- [x] https://www.eventbrite.it/b/italy--roma/food-and-drink/
 - [ ] https://www.insidewine.it/eventi-del-vino-a-roma/
 - [ ] https://zero.eu/it/roma/eventi/bere-mangiare/?start_date=2023-12-02
 - [ ] https://www.ilcorridore.it/eventi-gastronomici-dei-monti-lepini-2023-2024/
@@ -154,7 +155,7 @@ Eventi di beneficenza Roma selezionati
 
 ### Sfilate moda
 
-- [ ] https://www.eventbrite.it/b/italy--roma/fashion/
+- [x] https://www.eventbrite.it/b/italy--roma/fashion/
 - [ ] https://romefashionweek.it/
 - [ ] https://www.eventidiroma.it/eventi-pubblici/sfilata-di-moda/
 - [ ] https://www.giraitalia.it/sfilate_moda/lazio/roma/

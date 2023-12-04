@@ -44,15 +44,28 @@ class Bot
                 Da aggiungere alla richiesta:
                 "EventbriteFormat/16",
                 "EventbriteFormat/1"
+
+            "EventbriteCategory/105",
+            "EventbriteCategory/106",
+            "EventbriteCategory/108",
+            "EventbriteCategory/109",
+            "EventbriteCategory/110",
+            "EventbriteCategory/111"
             */
 
             //TODO: add results from string search like "aperitivo"
 
             Console.WriteLine(t.Result.ToString());
-            erl += JsonSerializer.Deserialize<EventResponseList>(t.Result.ToString());
-        } while (erl.events.pagination.object_count > erl.events.results.Length);
+            EventResponseList? newEvent = JsonSerializer.Deserialize<EventResponseList>(t.Result.ToString());
+            if(newEvent != null){
+                erl += newEvent;
+            }
 
-        Console.WriteLine($"{erl.events.pagination.object_count}, {erl.events.results.Length}");        
+        } while (erl.events.pagination.page_count > page);
+
+        Console.WriteLine($"{erl.events.pagination.object_count}, {erl.events.results.Length}");
+
+        Console.WriteLine(erl.ToString()); 
 
         using (StreamWriter file = new StreamWriter("events.json"))
         {

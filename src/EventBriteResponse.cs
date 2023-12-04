@@ -51,7 +51,15 @@ public class Events
             string bettername = name.Replace("\n", "").Replace("\"", "\\\"");
             string bettersummary = summary.Replace("\n", "").Replace("\"", "\\\"");
 
-            return $"{{\"name\": \"{bettername}\", \"summary\" : \"{bettersummary}\",  \"date\":\"{start_date}\", \"address\" : {primary_venue},  \"type\" : \"{tags.Where<Tag>((item) => item.prefix.Equals("EventbriteCategory")).First().display_name}\" }}";
+            List<string> list = new();
+
+            foreach(Tag tag in tags){
+                list.Add("\"" + tag.display_name + "\"");
+            }
+
+            string tag_list = "[" + String.Join(", ", list.ToArray()) + "]";
+
+            return $"{{\"name\": \"{bettername}\", \"summary\" : \"{bettersummary}\",  \"date\":\"{start_date}\", \"address\" : {primary_venue},  \"types\" : {tag_list} }}";
         }
     }
 
@@ -61,8 +69,11 @@ public class Events
         public Pagination()
         {
             object_count = 0;
+            page_count = 1;
         }
         public int object_count { get; set; }
+
+        public int page_count {get; set;}
     }
 
     public Event[] results { get; set; }
@@ -76,6 +87,7 @@ public class Events
 
         a.results = result;
         a.pagination.object_count = Math.Max(a.pagination.object_count, b.pagination.object_count);
+        a.pagination.page_count = Math.Max(a.pagination.page_count, b.pagination.page_count);
         return a;
     }
 
