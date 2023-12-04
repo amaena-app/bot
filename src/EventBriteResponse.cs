@@ -39,7 +39,7 @@ public class Events
         }
 
         public DateOnly? start_date { get; set; }
-        public string summary { get; set; }
+        public string? summary { get; set; }
         public string name { get; set; }
 
         public Place primary_venue { get; set; }
@@ -49,7 +49,10 @@ public class Events
         public override string ToString()
         {
             string bettername = name.Replace("\n", "").Replace("\"", "\\\"");
-            string bettersummary = summary.Replace("\n", "").Replace("\"", "\\\"");
+            string bettersummary = "";
+            if(summary != null){
+                bettersummary = summary.Replace("\n", "").Replace("\"", "\\\"");
+            }
 
             List<string> list = new();
 
