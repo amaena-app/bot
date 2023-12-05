@@ -130,7 +130,11 @@ public class Place
 
     public override string ToString()
     {
-        return $"{{ \"name\" : \"{name}\", \"address\" : \"{address.address_1}\", \"latitude\" : {address.latitude}, \"longitude\" : {address.longitude} }}";
+        string bettername = name.Replace("\n", "").Replace("\"", "\\\"");
+
+        string betteraddress = address.address_1.Replace("\n", "").Replace("\"", "\\\"");
+
+        return $"{{ \"name\" : \"{bettername}\", \"address\" : \"{betteraddress}\", \"latitude\" : {address.latitude}, \"longitude\" : {address.longitude} }}";
     }
 
 
