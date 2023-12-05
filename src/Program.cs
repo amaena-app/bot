@@ -55,7 +55,7 @@ class Bot
 
             //TODO: add results from string search like "aperitivo"
 
-            Console.WriteLine(t.Result.ToString());
+            //Console.WriteLine(t.Result.ToString());
             EventResponseList? newEvent = JsonSerializer.Deserialize<EventResponseList>(t.Result.ToString());
             if(newEvent != null){
                 erl += newEvent;
@@ -63,9 +63,9 @@ class Bot
 
         } while (erl.events.pagination.page_count > page);
 
-        Console.WriteLine($"{erl.events.pagination.object_count}, {erl.events.results.Length}");
+        //Console.WriteLine($"{erl.events.pagination.object_count}, {erl.events.results.Length}");
 
-        Console.WriteLine(erl.ToString()); 
+        //Console.WriteLine(erl.ToString()); 
 
         using (StreamWriter file = new StreamWriter("events.json"))
         {

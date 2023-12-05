@@ -48,12 +48,8 @@ public class Events
 
         public override string ToString()
         {
-            string bettername = name.Replace("\n", "").Replace("\"", "\\\"");
-            string bettersummary = "";
-            if(summary != null){
-                bettersummary = summary.Replace("\n", "").Replace("\"", "\\\"");
-            }
-
+            string bettername = Tools.SanitizeString(name, false);
+            string bettersummary = Tools.SanitizeString(summary);
             List<string> list = new();
 
             foreach(Tag tag in tags){
@@ -117,22 +113,22 @@ public class Place
     public class Address
     {
 
-        public string address_1 { get; set; }
+        public string? address_1 { get; set; }
         public string latitude { get; set; }
         public string longitude { get; set; }
 
 
     }
 
-    public string name { get; set; }
+    public string? name { get; set; }
 
     public Address address { get; set; }
 
     public override string ToString()
     {
-        string bettername = name.Replace("\n", "").Replace("\"", "\\\"");
+        string bettername = Tools.SanitizeString(name, false);
 
-        string betteraddress = address.address_1.Replace("\n", "").Replace("\"", "\\\"");
+        string betteraddress = Tools.SanitizeString(address.address_1);
 
         return $"{{ \"name\" : \"{bettername}\", \"address\" : \"{betteraddress}\", \"latitude\" : {address.latitude}, \"longitude\" : {address.longitude} }}";
     }
