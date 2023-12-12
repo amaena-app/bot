@@ -14,7 +14,7 @@ public class ZeroResponse
 
         public double lat { get; set; }
 
-        public double lon { get; set; }
+        public double lng { get; set; }
     }
 
     public class Image{
@@ -62,7 +62,7 @@ public class ZeroResponse
                 address = "",
                 name = venue_name,
                 latitude = venue_coords.lat,
-                longitude = venue_coords.lon
+                longitude = venue_coords.lng
             },
 
             date = finalDate,

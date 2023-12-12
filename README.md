@@ -63,7 +63,7 @@ Here the list of the supported website, the one with actually implemented suppor
 - [ ] https://www.discotecheroma.com/eventi-roma/
 - [ ] https://www.discoteche-roma.com/
 - [ ] https://www.eventiglobo.it/
-- [ ] https://zero.eu/it/roma/eventi/clubbing/
+- [x] https://zero.eu/it/roma/eventi/clubbing/
 - [ ] https://www.romapiu.it/eventi/
 
 
@@ -106,14 +106,14 @@ Here the list of the supported website, the one with actually implemented suppor
 
 - [x] https://www.eventbrite.it/b/italy--roma/food-and-drink/
 - [ ] https://www.insidewine.it/eventi-del-vino-a-roma/
-- [ ] https://zero.eu/it/roma/eventi/bere-mangiare/?start_date=2023-12-02
+- [x] https://zero.eu/it/roma/eventi/bere-mangiare/?start_date=2023-12-02
 - [ ] https://www.ilcorridore.it/eventi-gastronomici-dei-monti-lepini-2023-2024/
 
 
 ### Eventi gastronomici
 
 - [ ] https://www.gamberorosso.it/calendario-eventi/
-- [ ] https://zero.eu/it/roma/eventi/bere-mangiare/?start_date=2023-12-02
+- [x] https://zero.eu/it/roma/eventi/bere-mangiare/?start_date=2023-12-02
 - [ ] https://www.europapark.de/it/eventi/eventi-gastronomici
 - [ ] https://www.bollicineinvilla.it/
 - [ ] https://www.bibenda.it/sedi-regionali-singola.php?id=49
