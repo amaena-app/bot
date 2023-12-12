@@ -14,7 +14,7 @@ on:
       - completed
 
 jobs:
-  build:
+  retrieve:
 
     runs-on: ubuntu-latest
     permissions:
@@ -25,7 +25,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Retrieve events
-      run: bin/Debug/net7.0/bot
+      run: bin/Debug/net8.0/bot
     - name: Upload To Github Release
       uses: xresloader/upload-to-github-release@v1.4.2
       with:
