@@ -1,14 +1,18 @@
 
-public class EventResponseList
+using System.Globalization;
+using BaseEvents;
+
+public class EventBriteResponseList
 {
-    public EventResponseList()
+    public EventBriteResponseList()
     {
         events = new Events();
     }
 
     public Events events { get; set; }
 
-    public static EventResponseList operator +(EventResponseList a, EventResponseList  b){
+    public static EventBriteResponseList operator +(EventBriteResponseList a, EventBriteResponseList b)
+    {
         a.events += b.events;
 
         return a;
@@ -17,6 +21,51 @@ public class EventResponseList
     public override string ToString()
     {
         return $"{events}";
+    }
+
+
+    public BaseEvents.Event[] Convert(){
+        
+        Event[] converted = new Event[events.results.Length];
+
+        int index = 0;
+
+        Event newEvent;
+
+        foreach(Events.Event i in events.results){
+            NumberFormatInfo separator = new(){
+                NumberDecimalSeparator = "."
+            };
+
+            newEvent = new(){
+                name = i.name,
+                summary = i.summary ?? "",
+
+                date = (i.start_date ?? DateOnly.FromDateTime(DateTime.Now)).ToDateTime(i.start_time != null ? TimeOnly.Parse(i.start_time) : TimeOnly.FromDateTime(DateTime.Now)),
+
+                address = new(){
+                    name = i.primary_venue.name ?? $"{i.name} Location",
+                    address = i.primary_venue.address.address_1 ?? "",
+                    latitude = System.Convert.ToDouble(i.primary_venue.address.latitude, separator),
+                    longitude = System.Convert.ToDouble(i.primary_venue.address.longitude, separator)
+
+                },
+                
+                tags = new string[i.tags.Length],
+                images = new string[]{i.image != null ? i.image.url : ""}
+                
+            };
+
+            for(int j = 0; j < i.tags.Length; j++){
+                newEvent.tags[j] = i.tags[j].display_name;
+            }
+
+            converted[index++] = newEvent;
+        }
+
+        return converted;
+
+
     }
 
 }
@@ -38,7 +87,14 @@ public class Events
             public string prefix { get; set; }
         }
 
+        public class Image
+        {
+            public string url { get; set; }
+        }
+
         public DateOnly? start_date { get; set; }
+
+        public string? start_time { get; set; }
         public string? summary { get; set; }
         public string name { get; set; }
 
@@ -46,19 +102,31 @@ public class Events
 
         public Tag[] tags { get; set; }
 
+        public Image? image { get; set; }
+
         public override string ToString()
         {
             string bettername = Tools.SanitizeString(name, false);
             string bettersummary = Tools.SanitizeString(summary);
             List<string> list = new();
 
-            foreach(Tag tag in tags){
+            foreach (Tag tag in tags)
+            {
                 list.Add("\"" + tag.display_name + "\"");
             }
 
             string tag_list = "[" + String.Join(", ", list.ToArray()) + "]";
 
-            return $"{{\"name\": \"{bettername}\", \"summary\" : \"{bettersummary}\",  \"date\":\"{start_date}\", \"address\" : {primary_venue},  \"types\" : {tag_list} }}";
+
+            DateOnly dateOnly = start_date ?? DateOnly.FromDateTime(DateTime.Now);
+
+            TimeOnly timeOnly = start_time != null ? TimeOnly.Parse(start_time) : TimeOnly.FromDateTime(DateTime.Now);
+
+            DateTime date = dateOnly.ToDateTime(timeOnly);
+
+            string notNullImage = image != null ? image.url : "";
+
+            return $"{{\"name\": \"{bettername}\", \"summary\" : \"{bettersummary}\",  \"date\":\"{date.ToString("yyyy-MM-dd HH:mm:ss")}\", \"address\" : {primary_venue},  \"tags\" : {tag_list}, \"images\" : [ \"{notNullImage}\"] }}";
         }
     }
 
@@ -72,14 +140,15 @@ public class Events
         }
         public int object_count { get; set; }
 
-        public int page_count {get; set;}
+        public int page_count { get; set; }
     }
 
     public Event[] results { get; set; }
 
     public Pagination pagination { get; set; }
 
-    public static Events operator +(Events a, Events b){
+    public static Events operator +(Events a, Events b)
+    {
         Event[] result = new Event[a.results.Length + b.results.Length];
         a.results.CopyTo(result, 0);
         b.results.CopyTo(result, a.results.Length);

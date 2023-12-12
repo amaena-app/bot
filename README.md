@@ -22,7 +22,7 @@ Here the list of the supported website, the one with actually implemented suppor
 - [ ] https://www.museiincomuneroma.it/it/mostre_ed_eventi/mostre
 - [ ] https://www.romatoday.it/eventi/tipo/mostre/
 - [ ] https://www.turismoroma.it/it/tipo-evento/mostre
-- [ ] https://www.oggiroma.it/eventi/mostre/
+- [x] https://www.oggiroma.it/eventi/mostre/
 - [ ] https://www.artribune.com/mostre/roma/
 - [ ] https://www.romaguida.com/?gclid=CjwKCAiAmZGrBhAnEiwAo9qHiT_Okdp6N-17GpnMNlCiWudvKyAs3zeJ6Vr85GiIKoiqCiZ1zFegPhoCYtsQAvD_BwE
 - [x] https://www.eventbrite.it/d/italy--roma/arts--events/?page=2
@@ -30,14 +30,14 @@ Here the list of the supported website, the one with actually implemented suppor
 ### Escursioni a Roma selezionati 
 
 - [ ] https://www.civitatis.com/it/roma?aid=100&cmp=it_IT_Nonbrand&cmpint=_DestinosPrincipales_Italia_DSA&gclsrc=aw.ds&gad_source=1&gclid=CjwKCAiAmZGrBhAnEiwAo9qHiUJu203pqEIQ_Bhv7OI0kAcdzXw09RKB5wKH-_Hw2RG_jU-SWcIByhoCFucQAvD_BwE
-- [ ] https://www.eventbrite.it/d/italy--roma/tours/
+- [x] https://www.eventbrite.it/d/italy--roma/tours/
 - [x] https://www.eventbrite.it/b/italy--roma/travel-and-outdoor/
 - [ ] https://www.visite-guidate-roma.com/calendario-visite-guidate-associazione-culturale-roma-bella/
 
 
 ### Presentazione di libri a Roma selezionate 
 
-- [ ] https://www.eventbrite.it/d/italy--roma/presentazione-libro/
+- [x] https://www.eventbrite.it/d/italy--roma/presentazione-libro/
 - [ ] https://www.pigneto.it/eventi/libri/
 
 ###Eventi di beneficenza Roma selezionati 
@@ -47,7 +47,7 @@ Here the list of the supported website, the one with actually implemented suppor
 
 ### Conferenze e seminari Roma selezionati 
 
-- [ ] https://www.eventbrite.it/d/italy--roma/conferences/
+- [x] https://www.eventbrite.it/d/italy--roma/conferences/
 - [ ] https://news.uniroma1.it/appuntamenti
 - [ ] https://www.takethedate.it/tutti-gli-eventi/Cerca.html
 - [ ] https://www.beniculturali.it/eventi/cerca-evento?regione=tutte-le-regioni&tipo=tutte-le-tipologie&titolo=roma
@@ -69,15 +69,15 @@ Here the list of the supported website, the one with actually implemented suppor
 
 ### Dj set
 
-- [ ] https://www.eventbrite.it/d/italy--roma--85685461/dj-set/
+- [x] https://www.eventbrite.it/d/italy--roma--85685461/dj-set/
 - [ ] https://it.mamashelter.com/roma/calendario/
 - [ ] https://www.vinileroma.it/
 
 
 ### Festivals
 
-- [ ] https://www.eventbrite.it/d/italy--roma/festivals/
-- [ ] https://www.oggiroma.it/eventi/festival/
+- [x] https://www.eventbrite.it/d/italy--roma/festivals/
+- [x] https://www.oggiroma.it/eventi/festival/
 - [ ] https://romaeuropa.net/
 
 
@@ -85,7 +85,7 @@ Here the list of the supported website, the one with actually implemented suppor
 ### Eventi concorsi
 
 - [ ] https://www.fieraroma.it/
-- [ ] https://www.oggiroma.it/eventi/bandi-e-concorsi/premio-scenario-2023/68770/
+- [x] https://www.oggiroma.it/eventi/bandi-e-concorsi/premio-scenario-2023/68770/
 
 
 ### Eventi di logica
@@ -123,13 +123,13 @@ Here the list of the supported website, the one with actually implemented suppor
 
 - [ ] https://www.romapiu.it/aperitivo/
 - [ ] https://www.aperitiviroma06.it/
-- [ ] https://www.eventbrite.it/d/italy--roma/aperitivo/
+- [x] https://www.eventbrite.it/d/italy--roma/aperitivo/
 - [ ] https://aperitiviaroma.com/web/site#!locali
 
 ### Teatro 
 
 - [ ] https://www.teatro.it/spettacoli/roma
-- [ ] https://www.oggiroma.it/eventi/spettacoli/
+- [x] https://www.oggiroma.it/eventi/spettacoli/
 - [ ] https://www.romatoday.it/eventi/tipo/teatri/
 - [ ] https://www.ticketone.it/city/roma-216/
 - [ ] https://www.virgilio.it/italia/roma/eventi/spettacoli
@@ -145,13 +145,14 @@ Here the list of the supported website, the one with actually implemented suppor
 - [ ] https://www.auditorium.com/it/eventi/
 - [ ] https://rockinroma.com/
 - [ ] https://www.romaweekend.it/articoli/concerti-roma-2023/
+- [ ] https://www.ticketone.it/
 
 
 ### Zoo
 
 - [ ] https://www.bioparco.it/?gclid=EAIaIQobChMI8afY47bnggMVy5iDBx2GuQElEAAYASAAEgIpGPD_BwE
 - [ ] https://www.zoomarine.it/Home/Eventi
-- [ ] https://www.oggiroma.it/eventi/bambini-e-famiglie/al-bioparco-tutti-a-8-euro-fino-al-24-dicembre/60361/
+- [x] https://www.oggiroma.it/eventi/bambini-e-famiglie/al-bioparco-tutti-a-8-euro-fino-al-24-dicembre/60361/
 
 ### Sfilate moda
 
