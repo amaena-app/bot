@@ -85,6 +85,14 @@ class Bot
 
         }
 
+        Task<Event[]> ZeroEvents = Zero.Richiedi();
+
+        ZeroEvents.Wait();
+
+        foreach(Event e in ZeroEvents.Result){
+            totalEvents.Add(e);
+        }
+
         using (StreamWriter file = new StreamWriter("events.json"))
         {
             file.WriteLine(JsonSerializer.Serialize(totalEvents));
