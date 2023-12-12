@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xEv2Acj5xVVyX9HEo3d7+OeNc/HWQhb4dChTw4JaZ9cnD8uAsQNo2BMC9m1tk45ZZLm/4up2tjBR1+kg5ZPW7Q==",
+  "dgSpecHash": "+YteRhuaYm5HgM0ozTVPqIj3JsEvY0kq5Fte/Bd7+kulN6GJcVZXDNFakSO8NcBWFTLcKZ+1Mjkc3gBS/60SHQ==",
   "success": true,
   "projectFilePath": "/home/runner/work/bot/bot/bot.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/runner/.nuget/packages/htmlagilitypack/1.11.54/htmlagilitypack.1.11.54.nupkg.sha512"
+  ],
   "logs": []
 }
