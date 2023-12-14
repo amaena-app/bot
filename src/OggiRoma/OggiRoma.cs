@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Net;
 using System.Text.Json;
 using BaseEvents;
@@ -83,8 +84,13 @@ class OggiRoma
 
         string[] coords = via?.Attributes["href"].Value.Split("@")[^1].Split(",") ?? ["" + Tools.ROME_LAT, "" + Tools.ROME_LON, ""];
 
-        newEvent.address.latitude = Double.Parse(coords[^3].Replace(".", ","));
-        newEvent.address.longitude = Double.Parse(coords[^2].Replace(".", ","));
+
+        NumberFormatInfo separator = new()
+        {
+            NumberDecimalSeparator = "."
+        };
+        newEvent.address.latitude = Convert.ToDouble(coords[^3], separator);
+        newEvent.address.longitude = Convert.ToDouble(coords[^2], separator);
 
         return newEvent;
 
