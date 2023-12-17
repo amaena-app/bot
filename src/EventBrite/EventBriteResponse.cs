@@ -23,42 +23,78 @@ public class EventBriteResponseList
         return $"{events}";
     }
 
-
-    public BaseEvents.Event[] Convert(){
+    public string convertTags(string[] tags){
+        if (tags.Contains("Sports & Fitness"))
+            return "sport";
+        if(tags.Contains("Concert or Performance"))
+            return "concert";
+        if(tags.Contains("Class, Training, or Workshop"))
+            return "training";
+        if(tags.Contains("Fashion & Beauty"))
+            return "fashion";
+        if(tags.Contains("Charity & Causes"))
+            return "charity";
+        if(tags.Contains("Tour") || tags.Contains("Travel & Outdoor"))
+            return "escursion";
+        if(tags.Contains("Book") || tags.Contains("Books"))
+            return "book";
+        if(tags.Contains("Conference"))
+            return "conference";
+        if(tags.Contains("Aperitivo") || tags.Contains("Apericena"))
+            return "aperitive";
+        if(tags.Contains("Performing & Visual Arts"))
+            return "mostra";
+        if(tags.Contains("Festival or Fair"))
+            return "festival";
         
+        return tags.FirstOrDefault("event");
+    }
+
+
+    public BaseEvents.Event[] Convert()
+    {
+
         Event[] converted = new Event[events.results.Length];
 
         int index = 0;
 
         Event newEvent;
 
-        foreach(Events.Event i in events.results){
-            NumberFormatInfo separator = new(){
+        foreach (Events.Event i in events.results)
+        {
+            NumberFormatInfo separator = new()
+            {
                 NumberDecimalSeparator = "."
             };
 
-            newEvent = new(){
+            newEvent = new()
+            {
                 name = i.name,
                 summary = i.summary ?? "",
 
                 date = (i.start_date ?? DateOnly.FromDateTime(DateTime.Now)).ToDateTime(i.start_time != null ? TimeOnly.Parse(i.start_time) : TimeOnly.FromDateTime(DateTime.Now)),
 
-                address = new(){
+                address = new()
+                {
                     name = i.primary_venue.name ?? $"{i.name} Location",
                     address = i.primary_venue.address.address_1 ?? "",
                     latitude = System.Convert.ToDouble(i.primary_venue.address.latitude, separator),
                     longitude = System.Convert.ToDouble(i.primary_venue.address.longitude, separator)
 
                 },
-                
+
                 tags = new string[i.tags.Length],
-                images = new string[]{i.image != null ? i.image.url : ""}
-                
+                images = new string[] { i.image != null ? i.image.url : "" }
+
             };
 
-            for(int j = 0; j < i.tags.Length; j++){
+            for (int j = 0; j < i.tags.Length; j++)
+            {
                 newEvent.tags[j] = i.tags[j].display_name;
             }
+            
+
+            newEvent.tags = [convertTags(newEvent.tags)];
 
             converted[index++] = newEvent;
         }

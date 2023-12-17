@@ -28,6 +28,25 @@ public class OggiRomaResponse
 
     public string url {get; set;}
 
+    public string convertTag(string tag){
+        
+        switch (tag)
+        {
+            case "mostre" :
+                return "mostra";
+            case "festival":
+                return "festival";
+            case "bandi-e-concorsi":
+                return "concorsi";
+            case "spettacoli":
+                return "concert";
+            case "bambini-e-famiglie":
+                return "kids";
+            default:
+                return "event";
+        }
+    }
+
 
     public Event Convert(string tag = "")
     {
@@ -38,7 +57,7 @@ public class OggiRomaResponse
             date = startDate,
             images = [image],
             summary = description,
-            tags = [tag],
+            tags = [convertTag(tag)],
             address = new()
             {
                 address = location.address.streetAddress ?? "",

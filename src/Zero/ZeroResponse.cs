@@ -40,6 +40,30 @@ public class ZeroResponse
 
     public Image featured_image {get; set;}
 
+    public String convertTags(string[] tags){
+        if(tags.Contains("Bere e Mangiare"))
+            return "food";
+        if(tags.Contains("Mercatini"))
+            return "market";
+        if(tags.Contains("Teatro") || tags.Contains("Spettacoli"))
+            return "theater";
+        if(tags.Contains("Cinema"))
+            return "cinema";
+        if(tags.Contains("Incontri"))
+            return "conference";
+        if(tags.Contains("Festival"))
+            return "festival";
+        if(tags.Contains("Clubbing") || tags.Contains("Concerti"))
+            return "concert";
+        if(tags.Contains("Mostre"))
+            return "mostra";
+        if(tags.Contains("Festival"))
+            return "festival";
+
+        return "event";
+        
+    }
+
     public Event Convert(){
 
         string cdn = "https://cdn.zero.eu/uploads/";
@@ -68,7 +92,7 @@ public class ZeroResponse
             date = finalDate,
             images = [cdn + featured_image.file],
             summary = summ,
-            tags = category
+            tags = [convertTags(category)]
 
         };
 
