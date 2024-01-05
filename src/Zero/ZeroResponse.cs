@@ -17,12 +17,17 @@ public class ZeroResponse
         public double lng { get; set; }
     }
 
-    public class Image{
+    public class Image
+    {
 
-        public string file {get; set;}
+        public string file { get; set; }
     }
 
     public DateTime date_scope { get; set; }
+
+    public DateOnly start_date { get; set; }
+
+    public DateOnly end_date { get; set; }
 
     public MultiValue name { get; set; }
 
@@ -34,67 +39,77 @@ public class ZeroResponse
 
     public string venue_name { get; set; }
 
-    public Coords venue_coords {get; set;}
+    public Coords venue_coords { get; set; }
 
-    public string[] category {get; set;}
+    public string[] category { get; set; }
 
-    public Image featured_image {get; set;}
+    public Image featured_image { get; set; }
 
-    public String convertTags(string[] tags){
-        if(tags.Contains("Bere e Mangiare"))
+    public string convertTags(string[] tags)
+    {
+        if (tags.Contains("Bere e Mangiare"))
             return "food";
-        if(tags.Contains("Mercatini"))
+        if (tags.Contains("Mercatini"))
             return "market";
-        if(tags.Contains("Teatro") || tags.Contains("Spettacoli"))
+        if (tags.Contains("Teatro") || tags.Contains("Spettacoli"))
             return "theater";
-        if(tags.Contains("Cinema"))
+        if (tags.Contains("Cinema"))
             return "cinema";
-        if(tags.Contains("Incontri"))
+        if (tags.Contains("Incontri"))
             return "conference";
-        if(tags.Contains("Festival"))
+        if (tags.Contains("Festival"))
             return "festival";
-        if(tags.Contains("Clubbing") || tags.Contains("Concerti"))
+        if (tags.Contains("Clubbing") || tags.Contains("Concerti"))
             return "concert";
-        if(tags.Contains("Mostre"))
+        if (tags.Contains("Mostre"))
             return "mostra";
-        if(tags.Contains("Festival"))
+        if (tags.Contains("Festival"))
             return "festival";
 
         return "event";
-        
+
     }
 
-    public Event Convert(){
+    public Event[] Convert()
+    {
 
         string cdn = "https://cdn.zero.eu/uploads/";
 
-        DateTime finalDate = date_scope;
+        List<Event> events = [];
 
-        if(!start_time.Equals("")){
-            TimeOnly time = TimeOnly.Parse(start_time);
+        DateOnly oggi = DateOnly.FromDateTime(DateTime.Now);
 
-            finalDate = DateOnly.FromDateTime(date_scope).ToDateTime(time);
+        int end = Math.Min(oggi.AddDays(31).DayNumber, end_date.DayNumber);
+        int start = Math.Max(oggi.DayNumber, start_date.DayNumber);
+
+        for (int i = 0; i <= end - start; i++)
+        {
+            DateTime finalDate = DateOnly.FromDayNumber(start).AddDays(i).ToDateTime(TimeOnly.Parse(!start_time.Equals("") ? start_time : "00:00:00"));
+
+            string summ = content.plain.Length > excerpt.plain.Length ? content.plain : excerpt.plain;
+
+            events.Add (new()
+            {
+
+                name = name.plain,
+
+                address = new()
+                {
+                    address = "",
+                    name = venue_name,
+                    latitude = venue_coords.lat,
+                    longitude = venue_coords.lng
+                },
+
+                date = finalDate,
+                images = [cdn + featured_image.file],
+                summary = summ,
+                tags = [convertTags(category)]
+
+            });
         }
-        
-        string summ = content.plain.Length > excerpt.plain.Length ? content.plain : excerpt.plain;
 
-        return new(){
-
-            name = name.plain,
-
-            address = new(){
-                address = "",
-                name = venue_name,
-                latitude = venue_coords.lat,
-                longitude = venue_coords.lng
-            },
-
-            date = finalDate,
-            images = [cdn + featured_image.file],
-            summary = summ,
-            tags = [convertTags(category)]
-
-        };
+        return [.. events];
 
     }
 
