@@ -23,30 +23,31 @@ public class EventBriteResponseList
         return $"{events}";
     }
 
-    public string convertTags(string[] tags){
+    public string convertTags(string[] tags)
+    {
         if (tags.Contains("Sports & Fitness"))
             return "sport";
-        if(tags.Contains("Concert or Performance"))
+        if (tags.Contains("Concert or Performance"))
             return "concert";
-        if(tags.Contains("Class, Training, or Workshop"))
+        if (tags.Contains("Class, Training, or Workshop"))
             return "training";
-        if(tags.Contains("Fashion & Beauty"))
+        if (tags.Contains("Fashion & Beauty"))
             return "fashion";
-        if(tags.Contains("Charity & Causes"))
+        if (tags.Contains("Charity & Causes"))
             return "charity";
-        if(tags.Contains("Tour") || tags.Contains("Travel & Outdoor"))
+        if (tags.Contains("Tour") || tags.Contains("Travel & Outdoor"))
             return "escursion";
-        if(tags.Contains("Book") || tags.Contains("Books"))
+        if (tags.Contains("Book") || tags.Contains("Books"))
             return "book";
-        if(tags.Contains("Conference"))
+        if (tags.Contains("Conference"))
             return "conference";
-        if(tags.Contains("Aperitivo") || tags.Contains("Apericena"))
+        if (tags.Contains("Aperitivo") || tags.Contains("Apericena"))
             return "aperitive";
-        if(tags.Contains("Performing & Visual Arts"))
+        if (tags.Contains("Performing & Visual Arts"))
             return "mostra";
-        if(tags.Contains("Festival or Fair"))
+        if (tags.Contains("Festival or Fair"))
             return "festival";
-        
+
         return tags.FirstOrDefault("event");
     }
 
@@ -54,9 +55,9 @@ public class EventBriteResponseList
     public BaseEvents.Event[] Convert()
     {
 
-        Event[] converted = new Event[events.results.Length];
+        List<Event> converted = [];
 
-        int index = 0;
+        //Event[] converted = new Event[events.results.Length];
 
         Event newEvent;
 
@@ -67,39 +68,49 @@ public class EventBriteResponseList
                 NumberDecimalSeparator = "."
             };
 
-            newEvent = new()
-            {
-                name = i.name,
-                summary = i.summary ?? "",
-
-                date = (i.start_date ?? DateOnly.FromDateTime(DateTime.Now)).ToDateTime(i.start_time != null ? TimeOnly.Parse(i.start_time) : TimeOnly.FromDateTime(DateTime.Now)),
-
-                address = new()
-                {
-                    name = i.primary_venue.name ?? $"{i.name} Location",
-                    address = i.primary_venue.address.address_1 ?? "",
-                    latitude = System.Convert.ToDouble(i.primary_venue.address.latitude, separator),
-                    longitude = System.Convert.ToDouble(i.primary_venue.address.longitude, separator)
-
-                },
-
-                tags = new string[i.tags.Length],
-                images = new string[] { i.image != null ? i.image.url : "" }
-
-            };
-
-            for (int j = 0; j < i.tags.Length; j++)
-            {
-                newEvent.tags[j] = i.tags[j].display_name;
-            }
+            DateOnly start = i.start_date ?? DateOnly.FromDateTime(DateTime.Now);
+            DateOnly stop = i.end_date ?? DateOnly.FromDateTime(DateTime.Now);
             
 
-            newEvent.tags = [convertTags(newEvent.tags)];
 
-            converted[index++] = newEvent;
+            for (int day = 0; day <= stop.DayNumber - start.DayNumber; day++)
+            {
+                newEvent = new()
+                {
+                    name = i.name,
+                    summary = i.summary ?? "",
+
+                    date = start.AddDays(day).ToDateTime(i.start_time != null ? TimeOnly.Parse(i.start_time) : TimeOnly.FromDateTime(DateTime.Now)),
+
+                    address = new()
+                    {
+                        name = i.primary_venue.name ?? $"{i.name} Location",
+                        address = i.primary_venue.address.address_1 ?? "",
+                        latitude = System.Convert.ToDouble(i.primary_venue.address.latitude, separator),
+                        longitude = System.Convert.ToDouble(i.primary_venue.address.longitude, separator)
+
+                    },
+
+                    tags = new string[i.tags.Length],
+                    images = [i.image != null ? i.image.url : ""]
+
+                };
+
+                for (int j = 0; j < i.tags.Length; j++)
+                {
+                    newEvent.tags[j] = i.tags[j].display_name;
+                }
+
+
+                newEvent.tags = [convertTags(newEvent.tags)];
+
+                converted.Add(newEvent);
+            }
+
+
         }
 
-        return converted;
+        return [.. converted];
 
 
     }
@@ -119,8 +130,8 @@ public class Events
 
         public class Tag
         {
-            public string display_name { get; set; }
-            public string prefix { get; set; }
+            public string? display_name { get; set; }
+            public string? prefix { get; set; }
         }
 
         public class Image
@@ -131,6 +142,9 @@ public class Events
         public DateOnly? start_date { get; set; }
 
         public string? start_time { get; set; }
+
+        public DateOnly? end_date { get; set; }
+
         public string? summary { get; set; }
         public string name { get; set; }
 
@@ -151,7 +165,7 @@ public class Events
                 list.Add("\"" + tag.display_name + "\"");
             }
 
-            string tag_list = "[" + String.Join(", ", list.ToArray()) + "]";
+            string tag_list = "[" + string.Join(", ", [.. list]) + "]";
 
 
             DateOnly dateOnly = start_date ?? DateOnly.FromDateTime(DateTime.Now);
