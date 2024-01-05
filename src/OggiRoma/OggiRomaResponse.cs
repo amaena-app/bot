@@ -19,6 +19,8 @@ public class OggiRomaResponse
     public string name { get; set; }
 
     public DateTime startDate { get; set; }
+    
+    public DateOnly endDate {get; set;}
 
     public string description { get; set; }
 
@@ -48,7 +50,7 @@ public class OggiRomaResponse
     }
 
 
-    public Event Convert(string tag = "")
+    public Event Convert(double lat, double lon,string tag = "")
     {
 
         return new()
@@ -62,8 +64,8 @@ public class OggiRomaResponse
             {
                 address = location.address.streetAddress ?? "",
                 name = location.name,
-                latitude = Tools.ROME_LAT,
-                longitude = Tools.ROME_LON
+                latitude = lat,
+                longitude = lon,
             },
 
         };

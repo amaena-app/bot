@@ -19,7 +19,7 @@ class OggiRoma
 
         int max_pages = 1;
 
-        List<Task<Event>> TaskList = [];
+        List<Task<Event[]>> TaskList = [];
 
         //Console.WriteLine(max_pages);
 
@@ -53,21 +53,21 @@ class OggiRoma
 
         Task.WaitAll(TaskList.ToArray());
 
-        Event[] eventlist = new Event[TaskList.Count];
+        List<Event> eventlist = [];
 
         for (int i = 0; i < TaskList.Count; i++)
         {
-            eventlist[i] = TaskList[i].Result;
+            eventlist.AddRange(TaskList[i].Result);
         }
 
 
 
-        return eventlist;
+        return [.. eventlist];
 
     }
 
 
-    private static async Task<Event> RichiediEvento(OggiRomaResponse baseEvent, string categoria)
+    private static async Task<Event[]> RichiediEvento(OggiRomaResponse baseEvent, string categoria)
     {
         HtmlWeb web = new();
 
@@ -80,7 +80,6 @@ class OggiRoma
         HtmlNode via = doc.SelectSingleNode("/html/body/div[1]/div[1]/div[1]/div/div[1]/ul/li[5]/a");
         baseEvent.location.address.streetAddress = via?.InnerText ?? baseEvent.location.address.streetAddress;
 
-        Event newEvent = baseEvent.Convert(categoria);
 
         string[] coords = via?.Attributes["href"].Value.Split("@")[^1].Split(",") ?? ["" + Tools.ROME_LAT, "" + Tools.ROME_LON, ""];
 
@@ -89,11 +88,27 @@ class OggiRoma
         {
             NumberDecimalSeparator = "."
         };
-        newEvent.address.latitude = Convert.ToDouble(coords[^3], separator);
-        newEvent.address.longitude = Convert.ToDouble(coords[^2], separator);
+        double latitude = Convert.ToDouble(coords[^3], separator);
+        double longitude = Convert.ToDouble(coords[^2], separator);
+        DateOnly oggi = DateOnly.FromDateTime(DateTime.Now);
 
-        return newEvent;
+        int stop = Math.Min(oggi.AddDays(31).DayNumber, baseEvent.endDate.DayNumber);
 
+        int start = Math.Max(oggi.DayNumber, DateOnly.FromDateTime(baseEvent.startDate).DayNumber);
+
+        List<Event> events = [];
+
+        for(int i = 0; i <=  stop - start; i++){
+
+        Event newEvent = baseEvent.Convert(latitude, longitude,categoria);
+
+        newEvent.date = newEvent.date.AddDays(i);
+
+        events.Add(newEvent);
+
+        }
+
+        return [.. events];
 
     }
 
