@@ -83,13 +83,55 @@ class OggiRoma
 
         string[] coords = via?.Attributes["href"].Value.Split("@")[^1].Split(",") ?? ["" + Tools.ROME_LAT, "" + Tools.ROME_LON, ""];
 
+        if(coords.Length < 2){
+            coords = ["" + Tools.ROME_LAT, "" + Tools.ROME_LON, ""];
+        }
+        if (coords[0].Equals("")){
+            coords[0] = "" + Tools.ROME_LAT;
+            Console.WriteLine("lat: " + coords[0]);
+        }
+        if(coords[1].Equals("")){
+            coords[1] = "" + Tools.ROME_LON;
+            Console.WriteLine("lon: " + coords[1]);
+        }
 
-        NumberFormatInfo separator = new()
+        NumberFormatInfo pointSeparator = new()
         {
             NumberDecimalSeparator = "."
         };
-        double latitude = Convert.ToDouble(coords[^3], separator);
-        double longitude = Convert.ToDouble(coords[^2], separator);
+
+        NumberFormatInfo commaSeparator = new(){
+            NumberDecimalSeparator = ","
+        };
+
+        NumberFormatInfo latSeparator, lonSeparator;
+
+        if(coords[0].Contains(',')){
+            latSeparator = commaSeparator;
+        }else{
+            latSeparator = pointSeparator;
+        }
+
+        if(coords[1].Contains(',')){
+            lonSeparator = commaSeparator;
+        }else{
+            lonSeparator = pointSeparator;
+        }
+
+        double latitude, longitude;
+       try
+       {
+            latitude = Convert.ToDouble(coords[0] , latSeparator);
+            longitude = Convert.ToDouble(coords[1], lonSeparator);
+       }
+       catch (System.Exception)
+       {
+        foreach (string item in coords)
+        {
+            Console.WriteLine(item);
+        }
+        throw;
+       }
         DateOnly oggi = DateOnly.FromDateTime(DateTime.Now);
 
         int stop = Math.Min(oggi.AddDays(31).DayNumber, baseEvent.endDate.DayNumber);
