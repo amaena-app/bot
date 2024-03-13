@@ -8,7 +8,7 @@ class Bot
 
 
     static void Main(String[] args)
-    {2
+    {
         string ebString = "";
 
         using (StreamReader file = new StreamReader("request.json"))
