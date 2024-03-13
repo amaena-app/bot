@@ -4,11 +4,25 @@ using System.Text.Json;
 using BaseEvents;
 using HtmlAgilityPack;
 
-class OggiRoma
+public class OggiRoma : CustomRequests
 {
 
+    public override Task<Event[]>[] Richiedi(){
+        string[] oggiromaTypes = ["mostre", "festival", "bandi-e-concorsi", "spettacoli", "bambini-e-famiglie"];
 
-    public static async Task<Event[]> Richiedi(string categoria)
+        List<Task<Event[]>> requestList = [];
+        
+        foreach (string tipo in oggiromaTypes)
+        {
+            requestList.Add(RichiediSingolo(tipo));
+        }
+
+        return [.. requestList];
+        
+    }
+    
+
+    public static async Task<Event[]> RichiediSingolo(string categoria)
     {
 
         string url = "https://www.oggiroma.it/eventi/" + categoria + "/";
