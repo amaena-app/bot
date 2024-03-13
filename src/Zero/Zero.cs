@@ -18,11 +18,14 @@ public class Zero
 
         do
         {
-
-            Console.WriteLine($"Zero.eu({city.nomeIta}) page {page} of {pages}");
+            
 
             string end_date = DateOnly.FromDateTime(DateTime.Now).AddDays(31).ToString("yyyy-MM-dd");
-            Console.WriteLine(end_date);
+            
+            if(Tools.VERBOSE){
+                Console.WriteLine($"Zero.eu({city.nomeIta}) page {page} of {pages}");
+                Console.WriteLine(end_date);
+            }
 
             string url = $"https://zero.eu/api/v2/events?page={page}&per_page=100&metro_area={city.nomeIta.ToLower()}&end_date={end_date}&orderby=rating&order=desc&lang=it";
 

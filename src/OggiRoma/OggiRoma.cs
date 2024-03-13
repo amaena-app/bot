@@ -26,8 +26,9 @@ public class OggiRoma : CustomRequests
     {
 
         string url = "https://www.oggiroma.it/eventi/" + categoria + "/";
-
-        Console.WriteLine($"checking categoria {categoria}");
+        
+        if(Tools.VERBOSE)
+            Console.WriteLine($"checking categoria {categoria}");
 
         HtmlWeb web = new();
 
@@ -85,7 +86,8 @@ public class OggiRoma : CustomRequests
     {
         HtmlWeb web = new();
 
-        Console.WriteLine($"    checking event {baseEvent.name} of {categoria}");
+        if(Tools.VERBOSE)
+            Console.WriteLine($"    checking event {baseEvent.name} of {categoria}");
 
         HtmlNode doc = web.Load(baseEvent.url).DocumentNode;
 
@@ -102,11 +104,11 @@ public class OggiRoma : CustomRequests
         }
         if (coords[0].Equals("")){
             coords[0] = "" + Tools.ROME_LAT;
-            Console.WriteLine("lat: " + coords[0]);
+            //Console.WriteLine("lat: " + coords[0]);
         }
         if(coords[1].Equals("")){
             coords[1] = "" + Tools.ROME_LON;
-            Console.WriteLine("lon: " + coords[1]);
+            //Console.WriteLine("lon: " + coords[1]);
         }
 
         NumberFormatInfo pointSeparator = new()
