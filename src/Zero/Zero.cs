@@ -43,7 +43,7 @@ public class Zero
 
             foreach (ZeroResponse zr in events)
             {
-                eventList.AddRange(zr.Convert());
+                eventList.Add(zr.Convert());
             }
 
             page++;

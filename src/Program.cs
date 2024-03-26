@@ -24,15 +24,20 @@ class Bot
             file.Close();
         }
 
-        Dictionary<string, Event[]> dict = [];
+        Dictionary<string, Dictionary<string,  Object>> dict = [];
+        long totalEventCount = 0;
 
 
         foreach (City i in Cities.list)
         {
 
+            long cityEventCount = 0;
+
             Console.WriteLine($"City: {i.nomeEng} ({i.lat}, {i.lon})");
 
             EventBriteRequest ebRequest = JsonSerializer.Deserialize<EventBriteRequest>(ebString);
+            //ebRequest.event_search.date_range.from = DateTime.Now.ToString("yyyy-MM-dd");
+            //ebRequest.event_search.date_range.to = DateTime.Now.AddDays(32).ToString("yyyy-MM-dd");
             ebRequest.event_search.places = [i.eventBriteCode];
 
 
@@ -126,13 +131,38 @@ class Bot
 
             }
 
-            dict[i.nomeIta] = [.. totalEvents];
 
-            Console.WriteLine($"Total events for {i.nomeEng}: {totalEvents.Count}");
+            Dictionary<string, Object> cityDict = new();
+
+            cityDict["lat"] = i.lat;
+            cityDict["lon"] = i.lon;
+            cityDict["events"] = totalEvents;
+
+            DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+
+            foreach (Event e in totalEvents)
+            {
+                int start = Math.Clamp(Math.Max(e.from_date.DayNumber, today.DayNumber), 1, e.to_date.DayNumber);
+                int stop = Math.Clamp(Math.Min(e.to_date.DayNumber, today.DayNumber + 31), start, e.to_date.DayNumber);
+                if(Tools.VERBOSE)
+                    Console.WriteLine($"{e.name} ({e.from_date} - {e.to_date} = {stop - start + 1} days)");   
+                cityEventCount += stop - start + 1;
+            }
+
+            totalEventCount += cityEventCount;
+
+            cityDict["event_count"] = cityEventCount;
+            
+            dict[i.nomeIta] = cityDict;
+
+            Console.WriteLine($"Total events for {i.nomeEng}: {cityEventCount}");
             Console.WriteLine("------------------------------------------------------------");
 
 
         }
+
+        Console.WriteLine($"Total events: {totalEventCount}");
+        Console.WriteLine("------------------------------------------------------------");
 
         //Console.WriteLine($"{erl.events.pagination.object_count}, {erl.events.results.Length}");
 

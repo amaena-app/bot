@@ -56,7 +56,9 @@ public class OggiRomaResponse
         return new()
         {
             name = name,
-            date = startDate,
+            from_date = DateOnly.FromDateTime(startDate),
+            to_date = endDate,
+            time = TimeOnly.FromDateTime(startDate),
             images = [image],
             summary = description,
             tags = [convertTag(tag)],

@@ -14,7 +14,7 @@ public class OggiRoma : CustomRequests
         
         foreach (string tipo in oggiromaTypes)
         {
-            requestList.Add(RichiediSingolo(tipo));
+            requestList.Add(RichiediCategoria(tipo));
         }
 
         return [.. requestList];
@@ -22,7 +22,7 @@ public class OggiRoma : CustomRequests
     }
     
 
-    public static async Task<Event[]> RichiediSingolo(string categoria)
+    public static async Task<Event[]> RichiediCategoria(string categoria)
     {
 
         string url = "https://www.oggiroma.it/eventi/" + categoria + "/";
@@ -34,7 +34,7 @@ public class OggiRoma : CustomRequests
 
         int max_pages = 1;
 
-        List<Task<Event[]>> TaskList = [];
+        List<Task<Event>> TaskList = [];
 
         //Console.WriteLine(max_pages);
 
@@ -72,7 +72,7 @@ public class OggiRoma : CustomRequests
 
         for (int i = 0; i < TaskList.Count; i++)
         {
-            eventlist.AddRange(TaskList[i].Result);
+            eventlist.Add(TaskList[i].Result);
         }
 
 
@@ -82,7 +82,7 @@ public class OggiRoma : CustomRequests
     }
 
 
-    private static async Task<Event[]> RichiediEvento(OggiRomaResponse baseEvent, string categoria)
+    private static async Task<Event> RichiediEvento(OggiRomaResponse baseEvent, string categoria)
     {
         HtmlWeb web = new();
 
@@ -148,7 +148,7 @@ public class OggiRoma : CustomRequests
         }
         throw;
        }
-        DateOnly oggi = DateOnly.FromDateTime(DateTime.Now);
+        /*DateOnly oggi = DateOnly.FromDateTime(DateTime.Now);
 
         int stop = Math.Min(oggi.AddDays(31).DayNumber, baseEvent.endDate.DayNumber);
 
@@ -166,7 +166,11 @@ public class OggiRoma : CustomRequests
 
         }
 
-        return [.. events];
+
+
+        return [.. events];*/
+
+        return baseEvent.Convert(latitude, longitude, categoria);
 
     }
 

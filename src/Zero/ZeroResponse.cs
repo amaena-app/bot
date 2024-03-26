@@ -70,12 +70,12 @@ public class ZeroResponse
 
     }
 
-    public Event[] Convert()
+    public Event Convert()
     {
 
         string cdn = "https://cdn.zero.eu/uploads/";
 
-        List<Event> events = [];
+        /*List<Event> events = [];
 
         DateOnly oggi = DateOnly.FromDateTime(DateTime.Now);
 
@@ -109,7 +109,24 @@ public class ZeroResponse
             });
         }
 
-        return [.. events];
+        return [.. events];*/
+
+        return new(){
+            name = name.plain,
+            from_date = start_date,
+            to_date = end_date,
+            time = TimeOnly.Parse(!start_time.Equals("") ? start_time : "00:00:00"),
+            images = [cdn + featured_image.file],
+            summary = content.plain,
+            tags = [convertTags(category)],
+            address = new(){
+                address = "",
+                name = venue_name,
+                latitude = venue_coords.lat,
+                longitude = venue_coords.lng
+            }
+        };
+
 
     }
 
