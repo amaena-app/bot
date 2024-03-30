@@ -80,6 +80,8 @@ class Bot
 
             Task<Event[]> ZeroEvents = Zero.Richiedi(i);
 
+            Task<Event[]> EventimEvents = Eventim.Richiedi(i);
+
 
             List<Task<Event[]>> customs = [];
 
@@ -90,7 +92,7 @@ class Bot
 
             Task[] tasks = [.. EBtasks];
 
-            tasks = [.. tasks, .. customs, ZeroEvents];
+            tasks = [.. tasks, ZeroEvents,EventimEvents, .. customs];
 
 
             Task.WaitAll(tasks);
@@ -114,6 +116,13 @@ class Bot
 
 
             foreach (Event e in ZeroEvents.Result)
+            {
+                totalEvents.Add(e);
+            }
+
+            Console.WriteLine($"Eventim event count: {EventimEvents.Result.Length}");
+
+            foreach (Event e in EventimEvents.Result)
             {
                 totalEvents.Add(e);
             }

@@ -12,15 +12,18 @@ public class City
     public double lat { get; set; }
     public double lon { get; set; }
 
-    public City(string nomeIta, string nomeEng, string code, CustomRequests[] requests, double lat, double lon)
+    public int eventimCode { get; set; }
+
+    public City(string nomeIta, string nomeEng, string eventBriteCode, int eventimCode, CustomRequests[] requests, double lat, double lon)
     {
 
         this.nomeIta = nomeIta;
         this.nomeEng = nomeEng;
-        this.eventBriteCode = code;
+        this.eventBriteCode = eventBriteCode;
         this.requests = requests;
         this.lat = lat;
         this.lon = lon;
+        this.eventimCode = eventimCode;
 
     }
 
@@ -28,9 +31,9 @@ public class City
 
 public static class Cities
 {
-    public static  City ROMA = new City("Roma", "Rome", "101752607", [new OggiRoma()], 41.8992, 12.5450);
+    public static  City ROMA = new City("Roma", "Rome", "101752607", 216 ,[new OggiRoma()], 41.8992, 12.5450);
 
-    public static City MILANO = new City("Milano", "Milan", "101752703", [], 45.4613, 9.1595);
+    public static City MILANO = new City("Milano", "Milan", "101752703", 215,[], 45.4613, 9.1595);
 
     public static City[] list = [
             ROMA,
