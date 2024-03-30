@@ -68,7 +68,7 @@ public class EventBriteResponseList
                 NumberDecimalSeparator = "."
             };
 
-            DateOnly start = i.start_date ?? DateOnly.FromDateTime(DateTime.Now);
+            /*DateOnly start = i.start_date ?? DateOnly.FromDateTime(DateTime.Now);
             DateOnly stop = i.end_date ?? DateOnly.FromDateTime(DateTime.Now);
             
 
@@ -94,7 +94,27 @@ public class EventBriteResponseList
                     tags = new string[i.tags.Length],
                     images = [i.image != null ? i.image.url : ""]
 
-                };
+                };*/
+
+                  newEvent = new(){
+                      name = i.name,
+                      summary = i.summary ?? "",
+
+                      from_date = i.start_date ?? DateOnly.FromDateTime(DateTime.Now),
+                      to_date = i.end_date ?? DateOnly.FromDateTime(DateTime.Now),
+                      time = i.start_time != null ?  TimeOnly.Parse(i.start_time) : TimeOnly.FromDateTime(DateTime.Now),
+
+                    address = new(){
+                        name = i.primary_venue.name ?? $"{i.name} Location",
+                        address = i.primary_venue.address.address_1 ?? "",
+                        latitude = System.Convert.ToDouble(i.primary_venue.address.latitude, separator),
+                        longitude = System.Convert.ToDouble(i.primary_venue.address.longitude, separator)
+
+                    },
+
+                    tags = new string[i.tags.Length],
+                    images = [i.image != null ? i.image.url : ""]
+                 };
 
                 for (int j = 0; j < i.tags.Length; j++)
                 {
@@ -105,7 +125,7 @@ public class EventBriteResponseList
                 newEvent.tags = [convertTags(newEvent.tags)];
 
                 converted.Add(newEvent);
-            }
+            
 
 
         }
@@ -170,7 +190,7 @@ public class Events
 
             DateOnly dateOnly = start_date ?? DateOnly.FromDateTime(DateTime.Now);
 
-            TimeOnly timeOnly = start_time != null ? TimeOnly.Parse(start_time) : TimeOnly.FromDateTime(DateTime.Now);
+            TimeOnly timeOnly = start_time != null ?  TimeOnly.Parse(start_time) : TimeOnly.FromDateTime(DateTime.Now);
 
             DateTime date = dateOnly.ToDateTime(timeOnly);
 

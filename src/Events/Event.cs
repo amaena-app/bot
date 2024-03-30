@@ -1,6 +1,3 @@
-using System.Formats.Asn1;
-using System.Net.Sockets;
-
 namespace BaseEvents
 {
     
@@ -9,7 +6,11 @@ namespace BaseEvents
         public string name {get; set;}
         public string summary {get; set;}
 
-        public DateTime date {get; set;}
+        public DateOnly from_date {get; set;}
+
+        public DateOnly to_date {get; set;}
+
+        public TimeOnly time {get; set;}
 
         public Address address {get; set;}
 

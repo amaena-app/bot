@@ -4,22 +4,37 @@ using System.Text.Json;
 using BaseEvents;
 using HtmlAgilityPack;
 
-class OggiRoma
+public class OggiRoma : CustomRequests
 {
 
+    public override Task<Event[]>[] Richiedi(){
+        string[] oggiromaTypes = ["mostre", "festival", "bandi-e-concorsi", "spettacoli", "bambini-e-famiglie"];
 
-    public static async Task<Event[]> Richiedi(string categoria)
+        List<Task<Event[]>> requestList = [];
+        
+        foreach (string tipo in oggiromaTypes)
+        {
+            requestList.Add(RichiediCategoria(tipo));
+        }
+
+        return [.. requestList];
+        
+    }
+    
+
+    public static async Task<Event[]> RichiediCategoria(string categoria)
     {
 
         string url = "https://www.oggiroma.it/eventi/" + categoria + "/";
-
-        Console.WriteLine($"checking categoria {categoria}");
+        
+        if(Tools.VERBOSE)
+            Console.WriteLine($"checking categoria {categoria}");
 
         HtmlWeb web = new();
 
         int max_pages = 1;
 
-        List<Task<Event[]>> TaskList = [];
+        List<Task<Event>> TaskList = [];
 
         //Console.WriteLine(max_pages);
 
@@ -57,7 +72,7 @@ class OggiRoma
 
         for (int i = 0; i < TaskList.Count; i++)
         {
-            eventlist.AddRange(TaskList[i].Result);
+            eventlist.Add(TaskList[i].Result);
         }
 
 
@@ -67,11 +82,12 @@ class OggiRoma
     }
 
 
-    private static async Task<Event[]> RichiediEvento(OggiRomaResponse baseEvent, string categoria)
+    private static async Task<Event> RichiediEvento(OggiRomaResponse baseEvent, string categoria)
     {
         HtmlWeb web = new();
 
-        Console.WriteLine($"    checking event {baseEvent.name} of {categoria}");
+        if(Tools.VERBOSE)
+            Console.WriteLine($"    checking event {baseEvent.name} of {categoria}");
 
         HtmlNode doc = web.Load(baseEvent.url).DocumentNode;
 
@@ -88,11 +104,11 @@ class OggiRoma
         }
         if (coords[0].Equals("")){
             coords[0] = "" + Tools.ROME_LAT;
-            Console.WriteLine("lat: " + coords[0]);
+            //Console.WriteLine("lat: " + coords[0]);
         }
         if(coords[1].Equals("")){
             coords[1] = "" + Tools.ROME_LON;
-            Console.WriteLine("lon: " + coords[1]);
+            //Console.WriteLine("lon: " + coords[1]);
         }
 
         NumberFormatInfo pointSeparator = new()
@@ -132,7 +148,7 @@ class OggiRoma
         }
         throw;
        }
-        DateOnly oggi = DateOnly.FromDateTime(DateTime.Now);
+        /*DateOnly oggi = DateOnly.FromDateTime(DateTime.Now);
 
         int stop = Math.Min(oggi.AddDays(31).DayNumber, baseEvent.endDate.DayNumber);
 
@@ -150,7 +166,11 @@ class OggiRoma
 
         }
 
-        return [.. events];
+
+
+        return [.. events];*/
+
+        return baseEvent.Convert(latitude, longitude, categoria);
 
     }
 

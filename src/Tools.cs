@@ -25,4 +25,6 @@ public class Tools
 
     public static double ROME_LON = 12.5450;
 
+    public static bool VERBOSE = false;
+
 }
