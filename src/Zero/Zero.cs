@@ -31,6 +31,7 @@ public class Zero
 
             HttpResponseMessage mess = await client.GetAsync(url);
 
+
             IEnumerable<string> vals;
 
             if (mess.Headers.TryGetValues("X-WP-TotalPages", out vals))
@@ -38,12 +39,16 @@ public class Zero
                 pages = int.Parse(vals.First());
             }
 
+            try{
 
             ZeroResponse[] events = JsonSerializer.Deserialize<ZeroResponse[]>(await mess.Content.ReadAsStringAsync()) ?? [];
 
             foreach (ZeroResponse zr in events)
             {
                 eventList.Add(zr.Convert());
+            }
+            }catch(Exception e){
+                Console.WriteLine(e.Message);
             }
 
             page++;
