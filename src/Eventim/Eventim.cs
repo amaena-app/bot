@@ -29,7 +29,7 @@ public class Eventim {
         do
         {
             //Console.WriteLine($"Eventim({city.nomeIta}) page {page} of {pages}");
-            string url = $"https://public-api.eventim.com/websearch/search/api/exploration/v2/productGroups?webId=web__ticketone-it&language=it&retail_partner=ITT&city_ids={city.eventimCode}&city_ids=null&sort=Recommendation&in_stock=true&page={page}";
+            string url = $"https://public-api.eventim.com/websearch/search/api/exploration/v2/productGroups?webId=web__ticketone-it&language=it&retail_partner=ITT&city_names={city.nomeIta}&city_names=null&sort=Recommendation&in_stock=true&page={page}";
                         //https://public-api.eventim.com/websearch/search/api/exploration/v2/productGroups?webId=web__ticketone-it&language=it&retail_partner=ITT&city_ids=216&city_ids=null&sort=Recommendation&in_stock=true&page=2
                         //Console.WriteLine(url);
             HttpResponseMessage mess = await client.GetAsync(url );
